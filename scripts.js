@@ -8,6 +8,7 @@ let card1=0;
 let card2=0;
 let card3=0;
 let numimages=6;
+let missatgeInicial="Prem les cartes per descobrir l'activitat."
 
 function flipCard() {
   if (lockBoard) return;
@@ -39,7 +40,7 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
   cardsFlipped=0;
   cards.forEach(card => card.classList.remove('flip'));  
-  activitatText.innerHTML = "";
+  activitatText.innerHTML = missatgeInicial;
   
 
 

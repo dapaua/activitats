@@ -13,6 +13,11 @@
     font-weight: 600;
 }
 
+#reinici
+{
+    font-size:24;
+
+}
 
 #game-div
 {
@@ -23,6 +28,7 @@
 }
 body {
   height: 95vh;
+  width:90vh;
   display: flex;
   background: #060AB2;
 }

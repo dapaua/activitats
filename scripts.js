@@ -15,7 +15,7 @@ function flipCard() {
   
 
   this.classList.add('flip');
-
+  clicksound.start();
 
    cardsFlipped++;
   checkForFlipped();
@@ -27,7 +27,7 @@ if (cardsFlipped==3)
     {
         act_text="Ja tens activitat: "+card1+" "+card2+" "+card3 +  "!";
         activitatText.innerHTML = act_text;
-
+        document.getElementById("flipitem").classList.add("flippedtext");
     }
 
 
@@ -40,7 +40,8 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
   cardsFlipped=0;
   cards.forEach(card => card.classList.remove('flip'));  
-  activitatText.innerHTML = missatgeInicial;
+  document.getElementById("flipitem").classList.remove("flippedtext");
+  //activitatText.innerHTML = missatgeInicial;
   
 
 
@@ -81,8 +82,44 @@ function resetBoard() {
 resetBoard();
 document.getElementById("reinici").addEventListener('click', resetBoard);
 cards.forEach(card => card.addEventListener('click', flipCard));
-
+let clicksound = new Sound("img/page-flip-01a.mp3", 100, true);
 
 //Randomize cards images.
 
 
+// source: https://stackoverflow.com/a/11331200/4298200
+function Sound(source, volume, loop)
+{
+    this.source = source;
+    this.volume = volume;
+    this.loop = loop;
+    var son;
+    this.son = son;
+    this.finish = false;
+    this.stop = function()
+    {
+        document.body.removeChild(this.son);
+    }
+    this.start = function()
+    {
+        if (this.finish) return false;
+        this.son = document.createElement("embed");
+        this.son.setAttribute("src", this.source);
+        this.son.setAttribute("hidden", "true");
+        this.son.setAttribute("volume", this.volume);
+        this.son.setAttribute("autostart", "true");
+        this.son.setAttribute("loop", this.loop);
+        document.body.appendChild(this.son);
+    }
+    this.remove = function()
+    {
+        document.body.removeChild(this.son);
+        this.finish = true;
+    }
+    this.init = function(volume, loop)
+    {
+        this.finish = false;
+        this.volume = volume;
+        this.loop = loop;
+    }
+}

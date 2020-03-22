@@ -3,23 +3,66 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+
+@media (orientation: landscape) {
+  #full-board
+  {
+  
+    padding-top:0;
+
+  }
+  #game-div
+  {
+      
+      height:60%;
+  }
+
+  .flipcard {
+  margin-left:8vh;
+  margin-right:8vh;
+  }
+
+}
+
+@media (orientation: portrait) {
+  #full-board
+  {
+  
+    padding-top:5%;
+
+  }
+  #game-div
+  {
+      
+      height:50%;
+  }
+
+}
+
 #container-text
 {
-    width:90vh;
+    
     text-align: center;
-    font-family:"Arial";
-    font-size:48px;
+
+    font-size:4vw;
     font-weight: 600;
 }
 
 
+
 #activitat-text
 {
-    width:90vh;
+    
     text-align: center;
-    font-family:"Arial";
-    font-size:48px;
-    font-weight: 600;
+
+}
+
+#full-board
+{
+
+  
+
 }
 
 .myButton {
@@ -31,7 +74,7 @@
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:20px;
+	font-size:5w;
 	font-weight:bold;
 	padding:13px 32px;
 	text-decoration:none;
@@ -46,54 +89,89 @@
 	top:1px;
 }
 
-#buttonwrap
+
+.button-container{
+align-items: right;
+justify-content: right;
+text-align:right;
+}
+
+.card-header
 {
-  padding:30px;
-  display: flex;
   align-items: center;
   justify-content: center;
+  text-align:center;
+  font-size:3vw;
+  font-weight:600;
+
+}
+.cbox
+{
+  width:50px;
+padding:0px;
+
+}
+.bigtext
+{
+  font-size:3vw;
+}
+
+#so-label
+{
+  font-size:3vw;
+
 }
         
-#reinici
+#reinici,#btn-sound
 {
-    font-size:80px;
+
+  font-size:5vw;
 
 }
 
 #game-div
 {
     
-    height:50vh;
-    width:90vh;
+
+
+}
+html{
+  height: 100%;
 
 }
 body {
   height: 100%;
-  width:90vh;
   display: flex;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#87e0fd+0,53cbf1+40,05abe0+100;Blue+3D+%23+16 */
-  /*background: #87e0fd; /* Old browsers */
-  background: -moz-linear-gradient(top,  #87e0fd 0%, #53cbf1 40%, #05abe0 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=0 ); /* IE6-9 */
+  
+  /*background: -moz-linear-gradient(top,  #87e0fd 0%, #53cbf1 40%, #05abe0 100%); */
+  background: -webkit-linear-gradient(top,  #87e0fd 0%,#53cbf1 40%,#05abe0 100%); 
+  background: linear-gradient(to bottom,  #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=0 ); 
+  
   background-repeat: no-repeat;
   background-attachment: fixed;
+  font-family: 'Indie Flower', cursive;
+  font-weight:600;
 }
 
 .memory-game {
-  width: 90vh;
-  height: 45vh;
+  
+  height: 50%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
 }
 
-.memory-card {
-  width: calc(33% - 24px);
-  height: calc(100% - 10px);
-  margin: 12px 12px;
+.imagef, .imageb
+{
+  padding:1%;
+  height:90%;
+}
+
+.flipcard {
+  
   position: relative;
   transform: scale(1);
   transform-style: preserve-3d;
@@ -101,30 +179,40 @@ body {
   
 }
 
-.memory-card:active {
+.flipcard:active {
   transform: scale(0.97);
   transition: transform .2s;
+  
 }
 
-.memory-card.flip {
+.flipcard.flip {
   transform: rotateY(180deg);
 }
 
-.front-face,
-.back-face {
+.front,
+.back
+{
+  backface-visibility: hidden;
+  position: absolute;
+  width:90%;
+}
+/*
+.front,
+.back {
   width: 100%;
   height: 100%;
   padding: 20px;
   border: 9px double rgb(4, 33, 53);
   position: absolute;
+  
   border-radius: 30px;
-  /*background: rgb(238, 237, 206);*/
+  
   background-image: url("img/whitepaper.jpg");
   backface-visibility: hidden;
   box-shadow: 1px 1px 20px 0 rgba(0,0,0,0.75);
 }
-
-.front-face {
+*/
+.front {
   transform: rotateY(180deg);
 }
 
@@ -134,7 +222,21 @@ body {
   bottom: 0;
   width: 100%;
   font-family:Arial;
-	font-size:40px;
+	font-size:3vw;
+	font-weight:bold;
+  text-align: center;
+}
+
+
+.background {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height:100%;
+  z-index:-10000;
+  font-family:Arial;
+	font-size:3vw;
 	font-weight:bold;
   text-align: center;
 }
@@ -142,13 +244,12 @@ body {
 
 
 
-
-
 .fliptext {
   perspective: 500;
-  width: 80%;
-  height: 200px;
-    
+  width: 100%;
+  height: 10%;
+  
+
   
 }
 .fliptext .item.flippedtext {
@@ -160,22 +261,23 @@ body {
   transform-style: preserve-3d;
   transition: 0.5s;
 }
-.fliptext .item .face {
+.fliptext .item .tface {
   width: 100%;
   height: 100%;
   position: absolute;
   backface-visibility: hidden ;
     z-index: 2;
     text-align: center;
-    line-height: 200px;
+    
 }
-.fliptext .item .front {
+.fliptext .item .tfront {
   position: absolute;
   z-index: 1;
 
     cursor: pointer;
 }
-.fliptext .item .back {
+.fliptext .item .tback {
   transform: rotatex(-180deg);
     cursor: pointer;
 }
+

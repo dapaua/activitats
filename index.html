@@ -1,57 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> <meta http-equiv="Pragma" content="no-cache" /> 
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <META id="META" name="viewport" content="width=800">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
 
 
 
   <title>Activitats per les families</title>
-
+  <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div>
-  <div id="game-div">
-  <section class="memory-game">
-    <div class="memory-card" data-framework="aurelia" id="c1">
-      <img class="front-face" src="" alt="Aurelia" />
-      <img class="back-face" src="img/darrera.svg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="aurelia" id="c2">
-      <img class="front-face" src="" alt="Aurelia" />
-      <img class="back-face" src="img/darrera.svg" alt="JS Badge" />
+
+<body id="mybody">
+  <div id="full-board" class="container-fluid">
+    <div id="game-div" class="container-fluid">
+      <div class="memory-game row">
+
+        <div class="flipcard col-sm">
+          <div class="card front rounded text-white bg-info" id="c1">
+            <h5 class="card-header">FRONT</h5>
+            <img class="card-img-top imagef" id="front1" src="img/darrera.png" alt="Card image cap">
+            <div class="card-body">
+              
+            </div>
+
+
+          </div>
+
+          <div class="card back text-white bg-info">
+            <h5 class="card-header">Prem!</h5>
+            <img class="card-img-top imageb" src="img/darrera.png" alt="Card image cap">
+              <div class="card-body"> 
+              
+
+             </div>
+          </div>
+
+        </div>
+
+        <div class="flipcard col-sm">
+          <div class="card front text-white bg-success" id="c2">
+            <h5 class="card-header">FRONT</h5>
+            <img class="card-img-top imagef" id="front2" src="img/darrera.png" alt="Card image cap">
+            <div class="card-body">
+              
+            </div>
+
+
+          </div>
+
+          <div class="card back text-white bg-success">
+            <h5 class="card-header">Prem!</h5>
+            <img class="card-img-top imageb" src="img/darrera.png" alt="Card image cap">
+              <div class="card-body"> 
+              
+
+             </div>
+          </div>
+
+        </div>
+
+        <div class="flipcard col-sm">
+          <div class="card front  text-white bg-warning" id="c3">
+            <h5 class="card-header">FRONT</h5>
+            <img class="card-img-top imagef" id="front3" src="img/darrera.png" alt="Card image cap">
+            <div class="card-body">
+              
+            </div>
+
+
+          </div>
+
+          <div class="card back text-white bg-warning">
+            <h5 class="card-header">Prem!</h5>
+            <img class="card-img-top imagef" src="img/darrera.png" alt="Card image cap">
+              <div class="card-body"> 
+              
+
+             </div>
+          </div>
+
+        </div>
+
+
+
+
+
+
+      </div>
     </div>
 
-    <div class="memory-card" data-framework="vue" id="c3">
-      <img class="front-face" src="" alt="Vue" />
-      <img class="back-face" src="img/darrera.svg" alt="JS Badge" />
+    <div id="container-text" class="fliptext">
+      <div class="item" id="flipitem">
+        <div class="tface tfront">
+          Prem les cartes per descobrir l'activitat.
+        </div>
+        <div class="tface tback" id="activitat-text">
+          Prem les cartes per descobrir l'activitat.
+        </div>
+      </div>
     </div>
     
-  </section>
+    
+
+    <div id="buttonwrap container-fluid">
+      <div class="row">
+        <div class="col-sm">
+          <button type="button" class="btn btn-primary" id="reinici">Reiniciar</button>
+        </div>
+
+        <div class="col-sm">
+
+        </div>
+
+        <div class="col-sm button-container">
+          <button type="button" class="btn btn-primary btn-lg" id="btn-sound"> <i id="so-button" class="fas fa-volume-up"></i></button>
+
+          
+          
+
+        </div>
+      </div>
+    </div>
   </div>
- <div  id="container-text" class="fliptext">
-   <div class="item" id="flipitem">
-    <div class="face front">
-    Prem les cartes per descobrir l'activitat.
-    </div>
-    <div class="face back" id="activitat-text">
-    Prem les cartes per descobrir l'activitat.
-    </div>
-  </div>
-    <div id="buttonwrap">
-    <button class= "myButton" id="reinici">Reiniciar</button>
-    </div>
-  </div>  
-</div>
 
   <div class="footer">
     Ajuntament de Santa Coloma de Gramanet
-  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="bootstrap-4.4.1-dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
   <script src="scripts.js"></script>
 
-
 </body>
+
 </html>

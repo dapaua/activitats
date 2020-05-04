@@ -61,17 +61,17 @@ function resetBoard() {
   card2=0;
   card3=0;
  setTimeout(function(){
-  card1=Math.floor(Math.random() * (numimages-1))+1;
+  card1=Math.floor(Math.random() * (numimages))+1;
 
   do{
-  card2=Math.floor(Math.random() * (numimages-1))+1;
+  card2=Math.floor(Math.random() * (numimages))+1;
   } while (card2 === card1);
 
   do{
-  card3=Math.floor(Math.random() * (numimages-1))+1;
+  card3=Math.floor(Math.random() * (numimages))+1;
   } while (card3===card2 || card3===card1);
  
-  card5=Math.floor(Math.random() * (numimagesact-1))+1;
+  card5=Math.floor(Math.random() * (numimagesact))+1;
 
   var c1 = document.getElementById("front1");
   c1.src="img/cartes/o"+card1+".png";  
